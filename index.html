@@ -3,325 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Health Tracking — acompanhe seus hábitos e indicadores de bem-estar em um só lugar.">
-    <title>Health Tracking — Dashboard</title>
+    <title>SafeLife — Login</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="app-shell">
-        <aside class="sidebar" id="sidebar">
-            <div class="brand">
-                <div class="brand-mark">
-                    <span></span><span></span><span></span>
-                </div>
-                <div>
-                    <strong>Safe<span>Life</span></strong>
-                    <small>your daily companion</small>
-                </div>
+<body class="auth-body">
+    <main class="auth-panel panel">
+        <!-- Logo -->
+        <div class="brand auth-brand">
+            <div class="brand-mark">
+                <span></span><span></span><span></span>
+            </div>
+            <div>
+                <strong>Safe<span>Life</span></strong>
+                <small>your daily companion</small>
+            </div>
+        </div>
+
+        <div class="panel-header auth-header">
+            <div>
+                <p class="eyebrow">BEM-VINDO DE VOLTA</p>
+                <h2>Acesse sua conta</h2>
+            </div>
+        </div>
+
+        <form action="dashboard.html" method="GET" class="auth-form">
+            <div class="input-group">
+                <label class="nav-label">E-MAIL</label>
+                <input type="email" placeholder="seu@email.com" required class="auth-input">
+            </div>
+            
+            <div class="input-group">
+                <label class="nav-label">SENHA</label>
+                <input type="password" placeholder="••••••••" required class="auth-input">
             </div>
 
-            <nav class="main-nav" aria-label="Navegação principal">
-                <p class="nav-label">VISÃO GERAL</p>
-                <button class="nav-item active" data-section="overview">
-                    <span class="nav-icon">⌂</span>
-                    <span>Dashboard</span>
-                </button>
-                <button class="nav-item" data-section="activity">
-                    <span class="nav-icon">◒</span>
-                    <span>Atividade</span>
-                </button>
-                <button class="nav-item" data-section="sleep">
-                    <span class="nav-icon">☾</span>
-                    <span>Sono</span>
-                </button>
-                <button class="nav-item" data-section="nutrition">
-                    <span class="nav-icon">◉</span>
-                    <span>Nutrição</span>
-                </button>
+            <button type="submit" class="auth-btn">Entrar no Dashboard <span>→</span></button>
+        </form>
 
-                <p class="nav-label">ACOMPANHAMENTO</p>
-                <button class="nav-item" data-section="history">
-                    <span class="nav-icon">▤</span>
-                    <span>Histórico</span>
-                </button>
-                <button class="nav-item" data-section="goals">
-                    <span class="nav-icon">◎</span>
-                    <span>Metas</span>
-                </button>
-            </nav>
+        <div class="auth-footer">
+            <span class="nav-label" style="margin:0; padding:0;">NOVO POR AQUI?</span>
+            <a href="cadastro.html" class="text-button" style="margin:0;">Criar uma conta <span>→</span></a>
+        </div>
+    </main>
 
-            <div class="sidebar-bottom">
-                <div class="coach-card">
-                    <div class="coach-orb"></div>
-                    <div>
-                        <strong>Seu progresso</strong>
-                        <p>Você está 18% acima da sua média semanal.</p>
-                    </div>
-                    <span class="arrow">↗</span>
-                </div>
-
-                <button class="profile-mini">
-                    <div class="avatar">JN</div>
-                    <div class="profile-copy">
-                        <strong>Jhon</strong>
-                        <small>Plano gratuito</small>
-                    </div>
-                    <span>•••</span>
-                </button>
-            </div>
-        </aside>
-
-        <main class="main-content">
-            <header class="topbar">
-                <button class="mobile-menu" id="mobileMenu" aria-label="Abrir menu">☰</button>
-                <div class="breadcrumb">
-                    <span>Dashboard</span>
-                    <span>/</span>
-                    <strong id="sectionTitle">Hoje</strong>
-                </div>
-
-                <div class="top-actions">
-                    <button class="icon-button" id="themeToggle" aria-label="Alternar tema">☼</button>
-                    <button class="icon-button notification" aria-label="Notificações">
-                        ◌
-                        <i></i>
-                    </button>
-                    <div class="top-avatar">JN</div>
-                </div>
-            </header>
-
-            <section class="content" id="content">
-                <div class="hero-row">
-                    <div>
-                        <p class="eyebrow">SEGUNDA, 31 DE AGOSTO</p>
-                        <h1>Olá, Jhon. <span>Como você está?</span></h1>
-                        <p class="hero-sub">Seu corpo fala através dos seus hábitos. Hoje, você está indo muito bem.</p>
-                    </div>
-                    <button class="date-selector" id="dateSelector">
-                        <span>31 ago, 2026</span>
-                        <b>⌄</b>
-                    </button>
-                </div>
-
-                <div class="health-score">
-                    <div class="score-main">
-                        <div class="score-ring">
-                            <svg viewBox="0 0 120 120" aria-hidden="true">
-                                <circle class="ring-bg" cx="60" cy="60" r="48"></circle>
-                                <circle class="ring-value" cx="60" cy="60" r="48" id="scoreRing"></circle>
-                            </svg>
-                            <div class="score-number">
-                                <strong id="healthScore">86</strong>
-                                <span>/100</span>
-                            </div>
-                        </div>
-                        <div class="score-copy">
-                            <span class="pill good">● Excelente</span>
-                            <h2>Health score</h2>
-                            <p>Seu equilíbrio entre movimento, sono, hidratação e recuperação está acima da média.</p>
-                            <button class="text-button" id="scoreDetails">Ver detalhes <span>→</span></button>
-                        </div>
-                    </div>
-
-                    <div class="score-divider"></div>
-
-                    <div class="score-stats">
-                        <div>
-                            <span>+12%</span>
-                            <small>vs. semana anterior</small>
-                        </div>
-                        <div>
-                            <span>4/5</span>
-                            <small>hábitos concluídos</small>
-                        </div>
-                        <div>
-                            <span>7 dias</span>
-                            <small>melhor sequência</small>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="section-heading">
-                    <div>
-                        <p class="eyebrow">SUA ROTINA</p>
-                        <h2>Indicadores de hoje</h2>
-                    </div>
-                    <button class="ghost-button" id="customizeBtn">Personalizar <span>✦</span></button>
-                </div>
-
-                <div class="metric-grid">
-                    <article class="metric-card steps-card">
-                        <div class="metric-head">
-                            <div class="metric-icon">↗</div>
-                            <button class="card-menu">•••</button>
-                        </div>
-                        <div class="metric-label">Passos</div>
-                        <div class="metric-value"><strong>8.426</strong> <span>/ 10.000</span></div>
-                        <div class="progress-line"><i style="width:84%"></i></div>
-                        <div class="metric-foot"><span>84% da meta</span><em>+8% hoje</em></div>
-                    </article>
-
-                    <article class="metric-card water-card">
-                        <div class="metric-head">
-                            <div class="metric-icon">≈</div>
-                            <button class="card-menu">•••</button>
-                        </div>
-                        <div class="metric-label">Hidratação</div>
-                        <div class="metric-value"><strong id="waterValue">1,8</strong> <span>/ 2,5 L</span></div>
-                        <div class="progress-line"><i id="waterBar" style="width:72%"></i></div>
-                        <div class="metric-foot"><span>720 ml restantes</span><button id="addWater">+ 250 ml</button></div>
-                    </article>
-
-                    <article class="metric-card sleep-card">
-                        <div class="metric-head">
-                            <div class="metric-icon">☾</div>
-                            <button class="card-menu">•••</button>
-                        </div>
-                        <div class="metric-label">Sono</div>
-                        <div class="metric-value"><strong>7h 48m</strong></div>
-                        <div class="sleep-chart">
-                            <span style="height:38%"></span><span style="height:55%"></span><span style="height:45%"></span>
-                            <span style="height:72%"></span><span style="height:58%"></span><span style="height:86%"></span>
-                            <span style="height:68%"></span><span style="height:93%"></span><span style="height:76%"></span>
-                        </div>
-                        <div class="metric-foot"><span>Boa recuperação</span><em>+24 min</em></div>
-                    </article>
-
-                    <article class="metric-card heart-card">
-                        <div class="metric-head">
-                            <div class="metric-icon">♥</div>
-                            <button class="card-menu">•••</button>
-                        </div>
-                        <div class="metric-label">Frequência cardíaca</div>
-                        <div class="metric-value"><strong>68</strong> <span>bpm</span></div>
-                        <div class="mini-line-chart" aria-label="Gráfico da frequência cardíaca">
-                            <svg viewBox="0 0 260 65" preserveAspectRatio="none">
-                                <path d="M0 41 C16 36, 23 44, 36 39 S59 26, 76 37 S96 58, 112 39 S126 24, 143 34 S163 49, 180 36 S200 19, 218 33 S240 43, 260 25"></path>
-                            </svg>
-                        </div>
-                        <div class="metric-foot"><span>Repouso</span><em>Estável</em></div>
-                    </article>
-                </div>
-
-                <div class="dashboard-columns">
-                    <section class="panel activity-panel">
-                        <div class="panel-header">
-                            <div>
-                                <p class="eyebrow">ATIVIDADE</p>
-                                <h2>Movimento semanal</h2>
-                            </div>
-                            <select id="rangeSelect" class="range-select" aria-label="Período do gráfico">
-                                <option value="7">7 dias</option>
-                                <option value="14">14 dias</option>
-                            </select>
-                        </div>
-
-                        <div class="legend">
-                            <span><i></i> Passos</span>
-                            <span class="average">Meta diária · 10k</span>
-                        </div>
-                        <div class="bar-chart" id="barChart">
-                            <div class="goal-line"><span>10k</span></div>
-                            <div class="bars">
-                                <div class="bar-col"><div class="bar" style="height:55%"></div><small>Seg</small></div>
-                                <div class="bar-col"><div class="bar" style="height:72%"></div><small>Ter</small></div>
-                                <div class="bar-col"><div class="bar" style="height:65%"></div><small>Qua</small></div>
-                                <div class="bar-col"><div class="bar" style="height:88%"></div><small>Qui</small></div>
-                                <div class="bar-col"><div class="bar" style="height:69%"></div><small>Sex</small></div>
-                                <div class="bar-col"><div class="bar" style="height:97%"></div><small>Sáb</small></div>
-                                <div class="bar-col current"><div class="bar" style="height:84%"></div><small>Hoje</small></div>
-                            </div>
-                        </div>
-                        <div class="panel-insight">
-                            <div class="insight-icon">✦</div>
-                            <p><strong>Boa evolução.</strong> Você aumentou sua atividade em 14% nesta semana. Manter pequenas caminhadas ao longo do dia já faz diferença.</p>
-                        </div>
-                    </section>
-
-                    <section class="panel habits-panel">
-                        <div class="panel-header">
-                            <div>
-                                <p class="eyebrow">HÁBITOS</p>
-                                <h2>Meta de hoje</h2>
-                            </div>
-                            <span class="completion">4/5</span>
-                        </div>
-
-                        <div class="habit-list">
-                            <label class="habit done">
-                                <input type="checkbox" checked>
-                                <span class="check"></span>
-                                <span class="habit-text">Caminhar 30 minutos</span>
-                                <small>08:40</small>
-                            </label>
-                            <label class="habit done">
-                                <input type="checkbox" checked>
-                                <span class="check"></span>
-                                <span class="habit-text">Beber 2,5 L de água</span>
-                                <small>12:20</small>
-                            </label>
-                            <label class="habit done">
-                                <input type="checkbox" checked>
-                                <span class="check"></span>
-                                <span class="habit-text">Fazer uma refeição equilibrada</span>
-                                <small>13:05</small>
-                            </label>
-                            <label class="habit done">
-                                <input type="checkbox" checked>
-                                <span class="check"></span>
-                                <span class="habit-text">Pausa de 5 min sem tela</span>
-                                <small>15:10</small>
-                            </label>
-                            <label class="habit">
-                                <input type="checkbox">
-                                <span class="check"></span>
-                                <span class="habit-text">Desligar telas às 23h</span>
-                                <small>pendente</small>
-                            </label>
-                        </div>
-                        <button class="add-habit" id="addHabit">+ Adicionar hábito</button>
-                    </section>
-                </div>
-
-                <div class="section-heading recent-heading">
-                    <div>
-                        <p class="eyebrow">ÚLTIMOS REGISTROS</p>
-                        <h2>Seu histórico</h2>
-                    </div>
-                    <button class="text-button">Ver tudo <span>→</span></button>
-                </div>
-
-                <section class="panel history-panel">
-                    <div class="history-row history-header">
-                        <span>DATA</span><span>ATIVIDADE</span><span>RESULTADO</span><span>STATUS</span>
-                    </div>
-                    <div class="history-row">
-                        <span>31 ago</span><strong>Check-in diário</strong><span>Health score 86</span><em class="status success">Excelente</em>
-                    </div>
-                    <div class="history-row">
-                        <span>30 ago</span><strong>Caminhada</strong><span>9.214 passos</span><em class="status success">Concluído</em>
-                    </div>
-                    <div class="history-row">
-                        <span>29 ago</span><strong>Sono</strong><span>7h 31m</span><em class="status neutral">Normal</em>
-                    </div>
-                    <div class="history-row">
-                        <span>28 ago</span><strong>Hidratação</strong><span>2,7 L</span><em class="status success">Meta batida</em>
-                    </div>
-                </section>
-
-                <footer class="footer">
-                    <span>healthtrack © 2026</span>
-                    <span>Dados demonstrativos • Não substitui acompanhamento profissional</span>
-                </footer>
-            </section>
-        </main>
-    </div>
-
-    <div class="toast" id="toast" role="status" aria-live="polite">
-        <span>✓</span>
-        <p id="toastText">Atualizado com sucesso.</p>
-    </div>
-
-    <script src="script.js"></script>
+    <!-- Script para manter o tema (Dark/Light) salvo no localStorage -->
+    <script>
+        if (localStorage.getItem("healthtrack-theme") === "dark") {
+            document.body.classList.add("dark");
+        }
+    </script>
 </body>
 </html>

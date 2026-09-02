@@ -75,69 +75,49 @@ document
 // NAVEGAÇÃO
 // ======================================================
 
+// ======================================================
+// NAVEGAÇÃO E TROCA DE TELAS
+// ======================================================
 const sectionNames = {
-
     overview: "Hoje",
-
     activity: "Atividade",
-
     sleep: "Sono",
-
     nutrition: "Nutrição",
-
     history: "Histórico",
-
     goals: "Metas"
 };
 
-
 document.querySelectorAll(".nav-item").forEach(item => {
-
     item.addEventListener("click", () => {
+        // 1. Remove o estado ativo de todos os botões do menu
+        document.querySelectorAll(".nav-item").forEach(element => {
+            element.classList.remove("active");
+        });
 
-        // Remove o estado ativo de todos
-        document
-            .querySelectorAll(".nav-item")
-            .forEach(element => {
-
-                element.classList.remove("active");
-
-            });
-
-
-        // Ativa o item selecionado
+        // 2. Ativa o botão clicado
         item.classList.add("active");
 
-
-        // Descobre qual seção foi selecionada
+        // 3. Descobre qual seção foi selecionada
         const section = item.dataset.section;
 
+        // 4. Atualiza o título do topo
+        document.getElementById("sectionTitle").textContent = sectionNames[section];
 
-        // Atualiza o título do topo
-        document.getElementById("sectionTitle").textContent =
-            sectionNames[section];
+        // 5. Oculta todas as views (telas)
+        document.querySelectorAll(".dashboard-view").forEach(view => {
+            view.classList.remove("active");
+        });
 
-
-        // Fecha o menu no celular
-        document
-            .getElementById("sidebar")
-            .classList.remove("open");
-
-
-        // Mostra uma mensagem para as outras seções
-        if (section !== "overview") {
-
-            showToast(
-                `${sectionNames[section]} selecionado — conteúdo demonstrativo.`
-            );
-
+        // 6. Mostra a view correspondente
+        const activeView = document.getElementById(`view-${section}`);
+        if (activeView) {
+            activeView.classList.add("active");
         }
 
+        // 7. Fecha o menu no celular (se estiver aberto)
+        document.getElementById("sidebar").classList.remove("open");
     });
-
 });
-
-
 // ======================================================
 // SISTEMA DE HIDRATAÇÃO
 // ======================================================

@@ -1125,3 +1125,184 @@ body.dark .heart-card .metric-icon { background: #3f2a25; }
         gap: 6px;
     }
 }
+
+/* ======================================================
+   TELA DE LOGIN / CADASTRO
+   ====================================================== */
+.auth-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    background: var(--bg);
+}
+
+.auth-container {
+    background: var(--surface);
+    padding: 40px;
+    border-radius: 19px;
+    box-shadow: var(--shadow);
+    width: 100%;
+    max-width: 420px;
+    border: 1px solid var(--line);
+}
+
+.auth-input {
+    width: 100%;
+    padding: 12px 14px;
+    margin-top: 5px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--bg);
+    color: var(--text);
+    outline: none;
+    font-size: 14px;
+    transition: border-color 0.2s ease;
+}
+
+.auth-input:focus {
+    border-color: var(--accent-strong);
+}
+
+.btn-primary {
+    display: inline-block;
+    background: var(--text);
+    color: var(--surface);
+    padding: 14px 24px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+/* Ajuste do botão primário no dark mode */
+body.dark .btn-primary {
+    background: var(--accent-strong);
+    color: #fff;
+}
+
+/* ======================================================
+   TELAS DE AUTENTICAÇÃO (LOGIN / CADASTRO)
+   ====================================================== */
+.auth-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    background: var(--bg);
+}
+
+.auth-panel {
+    width: 100%;
+    max-width: 420px;
+    padding: 40px;
+}
+
+.auth-brand {
+    justify-content: center;
+    margin-bottom: 30px;
+    padding: 0;
+}
+
+.auth-header {
+    margin-bottom: 25px;
+    text-align: center;
+    justify-content: center;
+}
+
+.auth-header h2 {
+    font-size: 24px;
+    margin-top: 5px;
+}
+
+.input-group {
+    margin-bottom: 18px;
+}
+
+.input-group .nav-label {
+    padding: 0;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.auth-input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--bg);
+    color: var(--text);
+    outline: none;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.auth-input:focus {
+    border-color: var(--accent-strong);
+    box-shadow: 0 0 0 3px rgba(87, 184, 78, 0.1);
+}
+
+.auth-btn {
+    width: 100%;
+    background: var(--text);
+    color: var(--surface);
+    padding: 16px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: transform 0.2s ease;
+}
+
+.auth-btn:hover {
+    transform: translateY(-2px);
+}
+
+body.dark .auth-btn {
+    background: var(--accent-strong);
+    color: #fff;
+}
+
+.auth-footer {
+    margin-top: 35px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/* ======================================================
+   CONTROLE DE TELAS (VIEWS)
+   ====================================================== */
+.dashboard-view {
+    display: none;
+    animation: fadeSlideUp 0.4s ease forwards;
+}
+
+.dashboard-view.active {
+    display: block;
+}
+
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

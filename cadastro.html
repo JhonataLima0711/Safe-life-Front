@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeLife — Cadastro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-body">
+    <main class="auth-panel panel">
+        <!-- Logo -->
+        <div class="brand auth-brand">
+            <div class="brand-mark">
+                <span></span><span></span><span></span>
+            </div>
+            <div>
+                <strong>Safe<span>Life</span></strong>
+                <small>your daily companion</small>
+            </div>
+        </div>
+
+        <div class="panel-header auth-header">
+            <div>
+                <p class="eyebrow">COMECE AGORA</p>
+                <h2>Crie sua conta</h2>
+            </div>
+        </div>
+
+        <form action="dashboard.html" method="GET" class="auth-form">
+            <div class="input-group">
+                <label class="nav-label">NOME</label>
+                <input type="text" placeholder="Como quer ser chamado?" required class="auth-input">
+            </div>
+
+            <div class="input-group">
+                <label class="nav-label">E-MAIL</label>
+                <input type="email" placeholder="seu@email.com" required class="auth-input">
+            </div>
+            
+            <div class="input-group">
+                <label class="nav-label">SENHA</label>
+                <input type="password" placeholder="Crie uma senha forte" required class="auth-input">
+            </div>
+
+            <button type="submit" class="auth-btn">Finalizar Cadastro <span>→</span></button>
+        </form>
+
+        <div class="auth-footer">
+            <span class="nav-label" style="margin:0; padding:0;">JÁ TEM UMA CONTA?</span>
+            <a href="index.html" class="text-button" style="margin:0;">Fazer login <span>→</span></a>
+        </div>
+    </main>
+
+    <script>
+        if (localStorage.getItem("healthtrack-theme") === "dark") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+</html>
